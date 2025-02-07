@@ -58,6 +58,10 @@ you may need to run manage.py first if a terminal isnt opened yet
 and then do 
 python manage.py runserver
 
+Now open http://127.0.0.1:8000/ in your browser to check if the project is running
+
+
+
 ultimately if nothing worked you are free to call me and I am more than happy to help you set it up
 
 
