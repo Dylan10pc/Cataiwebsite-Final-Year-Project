@@ -1,0 +1,216 @@
+/*custom google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Itim&family=Signika+Negative:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Inter&family=Itim&family=Signika+Negative:wght@500&display=swap');
+
+/*global styles*/
+* {
+    padding: 0px;
+    margin: 0px;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Itim', cursive;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+/*main navbar styles*/
+.headermain{
+    height: 60px;
+    background-color: rgb(185, 216, 183);
+}
+
+/*navbar styles*/
+.nav1 {
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    line-height: 60px;
+}
+
+/*image style on navbar*/
+.navleft{
+    display: flex;
+    margin-left: 40px;
+}
+
+/*navbar links style*/
+.navright {
+    margin-right: 30px;
+
+}
+
+/*style the unoreded list*/
+.navright ul{
+    list-style: none;
+    display: flex;
+}
+
+/*style the list items*/
+.navright ul li{
+    margin-top: 1px;
+    margin-right: 15px;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+/*hovereffct when im on the link*/
+.navright ul li:hover{
+    border-top: 3px solid rgb(205, 231, 240);
+    box-shadow: inset 0px 20px 10px -20px rgb(205, 231, 240);
+}
+
+/*make the links itself have no directions*/
+.navright ul li a {
+    text-decoration: none;
+    padding: 10px 5px 10px 5px;
+}
+
+/*main area styles*/
+.mainarea{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(250, 243, 227);
+}
+
+/*for texts keep them centred*/
+.textmain{
+    margin-top: 80px;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+.buttonarea{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/*for the button underneath upload area*/
+.button{
+    margin: 0;
+    width: auto;
+    background-color: rgb(252, 212, 130);
+    padding: 15px 30px;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*make button chnage color when there is an hover*/
+.button:hover{
+    background-color: rgb(205, 231, 240);
+    box-shadow: 0px 10px 20px -5px rgb(205, 231, 240);
+}
+
+/*this has a backgroudn colro a border make an items center inside it*/
+.upload {
+    margin: 20px auto;
+    width: 500px;
+    height: 300px;
+    border: 2px dashed rgb(205, 231, 240);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(185, 216, 183);
+    cursor: pointer;
+    position: relative;
+}
+
+/*this the text inside the upload area*/
+.upload p {
+    font-size: 18px;
+    color: rgb(100, 100, 100);
+}
+
+/*makes the image that has been upladed have a border radius*/
+.upload img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+}
+
+/*how it works texts*/
+.HowItWorks {
+    margin-top: 75px;
+
+}
+
+.steps {
+    margin-top: 30px;    
+}
+
+/*this is the text inside the how it works area has a box around the text only*/
+.steps p {
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: rgb(185, 216, 183);
+    border: 2px solid rgb(205, 231, 240);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/*make it so there is no list styles on the results area*/
+#results ul, 
+#results li,
+#results ul li {
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+/*make the modal have some style*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(205, 231, 240, 0.6);
+}
+
+/*make the content of the modal have a style*/
+.content {
+    background-color: rgb(185, 216, 183);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+/*make the container inside the modal have a style*/
+.crop-container {
+    max-height: 70vh;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+/*make the image inside the modal have a style*/
+#cropimg {
+    max-width: 100%;
+    max-height: 60vh;
+    display: block;
+    margin: 0 auto;
+}
+
+/*make the close button have a style*/
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}

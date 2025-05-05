@@ -1,0 +1,52 @@
+<!--load the static template tag-->
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link to css file-->
+    <link rel="stylesheet" href="{% static 'facts.css' %}">
+    <!--link to cropper.js css file-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+    <!--name of the tab-->
+    <title>PawFinder</title>
+</head>
+<body>
+    <!--nav bar-->
+    <header>
+        <div class="headermain">
+            <nav class="nav1">
+                <!--logo and also seperate the left and right part of nav bar-->
+                <div class="navleft">
+                    <img id="logo" src="{% static 'pawfinder.png' %}" alt="">
+                </div>
+                <!--right part of nav bar with the links-->
+                <div class="navright">
+                    <ul>
+                        <!--links to different pages-->
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'history' %}">History</a></li>
+                        <li><a href="{% url 'facts' %}">Facts</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h2>Cat Breed Facts</h2>
+        <div class="catmain">
+            {% for breed in cat_breeds %}
+                <div class="catfact">
+                    <h3>{{ breed.name }}</h3>
+                    {% if breed.image %}
+                        <img src="{{ breed.image.url }}" alt="{{ breed.name }}">
+                    {% endif %}
+                    <p><strong>Origin:</strong> {{ breed.origin }}</p>
+                    <p><strong>Temperament:</strong> {{ breed.temperament }}</p>
+                    <p><strong>Description:</strong> {{ breed.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

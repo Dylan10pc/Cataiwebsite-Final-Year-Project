@@ -1,0 +1,123 @@
+/*custom google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Itim&family=Signika+Negative:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Inter&family=Itim&family=Signika+Negative:wght@500&display=swap');
+
+/*global styles*/
+* {
+    padding: 0px;
+    margin: 0px;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Itim', cursive;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+/*main navbar styles*/
+.headermain{
+    height: 60px;
+    background-color: rgb(185, 216, 183);
+}
+
+/*navbar styles*/
+.nav1 {
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    line-height: 60px;
+}
+
+/*image style on navbar*/
+.navleft{
+    display: flex;
+    margin-left: 40px;
+}
+
+/*navbar links style*/
+.navright {
+    margin-right: 30px;
+
+}
+
+/*style the unoreded list*/
+.navright ul{
+    list-style: none;
+    display: flex;
+}
+
+/*style the list items*/
+.navright ul li{
+    margin-top: 1px;
+    margin-right: 15px;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+/*hovereffct when im on the link*/
+.navright ul li:hover{
+    border-top: 3px solid rgb(205, 231, 240);
+    box-shadow: inset 0px 20px 10px -20px rgb(205, 231, 240);
+}
+
+/*make the links itself have no directions*/
+.navright ul li a {
+    text-decoration: none;
+    padding: 10px 5px 10px 5px;
+}
+
+/*main area styles*/
+.mainarea{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(250, 243, 227);
+
+}
+
+/*title design*/
+.title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/*have everything be in the center*/
+.historygroup {
+    margin-top: 50px;
+    align-items: center;
+}
+
+
+.historypics {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: rgb(185, 216, 183);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/*where the buttons are*/
+.buttonarea {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 10px;
+}
+/*button styles*/
+form button.delete {
+    background-color: #f05746;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/*hover effect for delete button*/
+form button.delete:hover {
+    background-color: #5c1a13;
+}

@@ -1,0 +1,66 @@
+<!--load the static template tag-->
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link to css file-->
+    <link rel="stylesheet" href="{% static 'history.css' %}">
+    <!--name of the tab-->
+    <title>PawFinder - History</title>
+</head>
+<body>
+    <!--nav bar-->
+    <header>
+        <div class="headermain">
+            <nav class="nav1">
+                <!--logo and also seperate the left and right part of nav bar-->
+                <div class="navleft">
+                    <img id="logo" src="{% static 'pawfinder.png' %}" alt="">
+                </div>
+                <!--right part of nav bar with the links-->
+                <div class="navright">
+                    <ul>
+                        <!--links to different pages-->
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'history' %}">History</a></li>
+                        <li><a href="{% url 'facts' %}">Facts</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="mainarea">
+        <div class="historycontainer">
+            <div class="title">
+                <h2>Prediction History</h2>
+            </div>
+            {% if history %}
+            <div class="historygroup">
+                {% for entry in history %}
+                    <div class="historypics">
+                        <img src="{{ entry.image.url }}" alt="Cat Image" style="max-width: 200px;">
+                        <p><strong>Breed:</strong> {{ entry.predictedbreed1 }}</p>
+                        <p><strong>Confidence:</strong> {{ entry.confidence|floatformat:2 }}%</p>
+                        <h4>Facts:</h4>
+                        <ul>
+                            {% for key, value in entry.facts.items %}
+                                <li><strong>{{ key }}:</strong> {{ value }}</li>
+                            {% endfor %}
+                        </ul>
+                        <div class="buttonarea">
+                        <form action="{% url 'delete_image' entry.id %}" method="POST" onsubmit="return confirm('Are you sure you want to delete this entry?');">
+                            {% csrf_token %}
+                            <button type="submit" class="delete">Delete</button>
+                        </form>
+                    </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No predictions yet.</p>
+        {% endif %}
+        </div>
+   
+    </main>
+</body>
